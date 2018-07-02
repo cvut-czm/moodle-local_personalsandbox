@@ -12,5 +12,5 @@ Plugin for creating personal sandbox courses for teachers and staff. In the sand
 | User Guide | Setup Guide | Technical Documentation |
 | :--------: | :---------: | :---------------------: |
 | ![User Guide](https://raw.githubusercontent.com/wiki/cvut-czm/personal_sandbox/images/users.png) | ![Setup Guide](https://raw.githubusercontent.com/wiki/cvut-czm/personal_sandbox/images/wrench.png) | ![Technical Documentation](https://raw.githubusercontent.com/wiki/cvut-czm/personal_sandbox/images/books.png) |
-| [User Guide](UserGuide) | [Setup Guide](SetupGuide) | [Technical Documentation](TechnicalDocumentation) |
+| [User Guide](https://github.com/cvut-czm/personal_sandbox/wiki/UserGuide) | [Setup Guide](https://github.com/cvut-czm/personal_sandbox/wiki/SetupGuide) | [Technical Documentation](https://github.com/cvut-czm/personal_sandbox/wiki/TechnicalDocumentation) |
 | Informations for users about how they can use and benefit from this plugin. | A step-by-step guide to instalation and configuration of this plugin. | Technical Documentation about this project, its dependencies, etc. |
