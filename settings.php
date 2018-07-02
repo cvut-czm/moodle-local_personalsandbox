@@ -46,5 +46,4 @@ if ( $hassiteconfig ){
     $settings->add(new admin_setting_configcheckbox('local_personal_sandbox/change_visibility', get_string('settings:change_visibility', 'local_personal_sandbox'),
         get_string('settings:change_visibility_desc', 'local_personal_sandbox'), '0'));
 
-    $settings->add(new admin_setting_heading('local_personal_sandbox/seminar_header2', get_string('settings:header2', 'local_personal_sandbox'),''));
 }
