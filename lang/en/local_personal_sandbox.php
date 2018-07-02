@@ -39,3 +39,9 @@ $string['task:clear_old_task_name']='Clearing old sandboxes';
 $string['notification:course_name_change_prevent']='You are not allowed to change name of sandbox course.';
 $string['notification:course_visibility_change_prevent']='You are not allowed to change visibility of sandbox course.';
 $string['notification:change_prevent_desc']='We change it back. All other settings you might changed were saved successfully.';
+
+/*
+ * Privacy API
+ */
+$string['privacy:metadata:course_personal_sandbox']='The personal sandbox plugin only need user id for his mapping to sandbox.';
+$string['privacy:metadata:course_personal_sandbox:userid']='User ID is used for mapping user to his sandbox.';
