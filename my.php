@@ -55,7 +55,7 @@ function handle_sandbox_redirect() {
 if (\local_personal_sandbox\sandbox::exist_for_user((int) $USER->id)) {
     handle_sandbox_redirect();
 } else {
-    require_capability('local/personal_sandbox:access',context_system::instance());
+    require_capability('local/personal_sandbox:access', context_system::instance());
     handle_no_sandbox();
 }
 

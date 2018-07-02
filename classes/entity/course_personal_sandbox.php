@@ -31,15 +31,15 @@ use local_cool\entity\database_entity;
 use local_cool\entity\user;
 
 class course_personal_sandbox extends database_entity {
-    const TableName = 'course_personal_sandbox';
+    const TABLENAME = 'local_personal_sandbox';
 
     protected $userid;
     protected $courseid;
 
-    public static function create(int $course_id, int $user_id): course_personal_sandbox {
+    public static function create(int $courseid, int $userid): course_personal_sandbox {
         $entity = new course_personal_sandbox();
-        $entity->courseid = $course_id;
-        $entity->userid = $user_id;
+        $entity->courseid = $courseid;
+        $entity->userid = $userid;
         return $entity;
     }
 
