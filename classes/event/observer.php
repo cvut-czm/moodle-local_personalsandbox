@@ -33,16 +33,16 @@ use local_personal_sandbox\entity\course_personal_sandbox;
 use local_personal_sandbox\sandbox;
 
 class observer {
-    public static function deleted_course(\core\event\course_deleted $course_deleted) {
-        $entity = course_personal_sandbox::get(['courseid' => $course_deleted->courseid]);
+    public static function deleted_course(\core\event\course_deleted $event) {
+        $entity = course_personal_sandbox::get(['courseid' => $event->courseid]);
         if ($entity == null) {
             return;
         }
         $entity->remove_from_db();
     }
 
-    public static function changed_course(\core\event\course_updated $course_updated) {
-        $entity = course_personal_sandbox::get(['courseid' => $course_updated->courseid]);
+    public static function changed_course(\core\event\course_updated $event) {
+        $entity = course_personal_sandbox::get(['courseid' => $event->courseid]);
         if ($entity == null) {
             return;
         }
@@ -70,7 +70,7 @@ class observer {
             }
         }
 
-        // Check if user can change sandbox visibility if not revert changes
+        // Check if user can change sandbox visibility if not revert changes.
         if ((bool) config_plugin::get_or_create(sandbox::NAME, 'change_visibility', 'false') == false) {
             if ($course->get_visibility() == 1) {
                 $course->set_visibility(0)->save();

@@ -51,19 +51,19 @@ class task_clear_old_sandboxes extends scheduled_task {
      * @throws \dml_exception
      */
     public function execute() {
-        //TODO: Need some testing in future.
-        $remove_time = config_plugin::get_or_create(sandbox::NAME, 'remove_after_duration', 0);
-        if ($remove_time <= 0) {
+        // TODO: Need some testing in future.
+        $removetime = config_plugin::get_or_create(sandbox::NAME, 'remove_after_duration', 0);
+        if ($removetime <= 0) {
             mtrace('Skipping task. Sandbox removal disabled in config.');
             return;
         }
         $entities = course_personal_sandbox::get_all();
         foreach ($entities as $entity) {
-            $course = $entity->get_course();
             /** @var course $course */
-            if ($course->get_time_created() + $remove_time <= time()) {
-                $user = $entity->get_owner();
+            $course = $entity->get_course();
+            if ($course->get_time_created() + $removetime <= time()) {
                 /** @var user $user */
+                $user = $entity->get_owner();
                 mtrace('Removing personal sandbox of user ' . $user->get_username());
                 delete_course($course->get_id());
                 $entity->remove_from_db();

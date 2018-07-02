@@ -14,6 +14,8 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+defined('MOODLE_INTERNAL') || die();
+
 class edit_page extends \local_cool\page\abstract_page {
 
     protected function global_permission(\local_cool\page\permissionsex $perm) {
@@ -24,7 +26,7 @@ class edit_page extends \local_cool\page\abstract_page {
         return context_course::instance($this->require_param('id'));
     }
 
-    function run() {
+    protected function run() {
         // TODO: Implement run() method.
     }
 

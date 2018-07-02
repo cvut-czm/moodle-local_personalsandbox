@@ -34,10 +34,10 @@ if ($hassiteconfig) {
             get_string('settings:remove_after_duration_desc', 'local_personal_sandbox'), 0
     ));
 
-    $role_entities = \local_cool\entity\role::get_all();
+    $roleentities = \local_cool\entity\role::get_all();
     $roles = [];
     $default = null;
-    foreach ($role_entities as $entity) {
+    foreach ($roleentities as $entity) {
         if ($default == null || $entity->get_shortname() === 'editingteacher') {
             $default = $entity->get_id();
         }

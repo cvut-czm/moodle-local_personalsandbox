@@ -54,7 +54,7 @@ class provider implements \core_privacy\local\metadata\provider {
         $contextlist = new \core_privacy\local\request\contextlist();
 
         $sql = "SELECT c.id FROM {context} c
-                INNER JOIN {course_personal_sandbox} cps ON cps.courseid = c.instanceid AND c.contextlevel = :contextlevel 
+                INNER JOIN {course_personal_sandbox} cps ON cps.courseid = c.instanceid AND c.contextlevel = :contextlevel
                 WHERE (cps.userid = :userid)";
 
         $contextlist->add_from_sql($sql, ['contextlevel' => CONTEXT_COURSE, 'userid' => $userid]);
