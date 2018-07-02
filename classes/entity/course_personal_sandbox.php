@@ -7,6 +7,7 @@
 
 namespace local_personal_sandbox\entity;
 
+defined('MOODLE_INTERNAL') || die();
 
 use local_cool\entity\course;
 use local_cool\entity\database_entity;

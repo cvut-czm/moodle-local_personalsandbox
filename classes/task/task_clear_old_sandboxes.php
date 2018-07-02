@@ -8,6 +8,7 @@
 
 namespace local_personal_sandbox\task;
 
+defined('MOODLE_INTERNAL') || die();
 
 use core\task\scheduled_task;
 use local_cool\entity\config_plugin;

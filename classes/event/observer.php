@@ -8,6 +8,7 @@
 
 namespace local_personal_sandbox\event;
 
+defined('MOODLE_INTERNAL') || die();
 
 use local_cool\entity\config_plugin;
 use local_personal_sandbox\entity\course_personal_sandbox;
