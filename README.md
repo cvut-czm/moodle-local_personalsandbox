@@ -6,7 +6,7 @@
 
 Plugin for creating personal sandbox courses for teachers and staff. In the sandbox, they can test new features, add new materials/quiz for their real courses, etc. 
 
-**In short: It is a big private playground that is easily manageable by administrators.**
+**In short: It is a big private playground for users that is easily manageable by administrators.**
 
 ## Quick navigation
 | User Guide | Setup Guide | Technical Documentation |
