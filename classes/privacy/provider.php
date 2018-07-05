@@ -16,20 +16,20 @@
 /**
  * Privacy provider
  *
- * @package local_personal_sandbox
+ * @package local_personalsandbox
  * @category privacy
  * @copyright 2018 CVUT CZM, Jiri Fryc
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace local_personal_sandbox\privacy;
+namespace local_personalsandbox\privacy;
 
 defined('MOODLE_INTERNAL') || die();
 
 use core_privacy\local\metadata\collection;
 use core_privacy\local\request\approved_contextlist;
 use core_privacy\local\request\writer;
-use local_personal_sandbox\entity\course_personal_sandbox;
+use local_personalsandbox\entity\course_personalsandbox;
 
 class provider implements \core_privacy\local\metadata\provider {
 
@@ -40,11 +40,11 @@ class provider implements \core_privacy\local\metadata\provider {
      * @return  collection     A listing of user data stored through this system.
      */
     public static function get_metadata(collection $collection): collection {
-        $collection->add_database_table('course_personal_sandbox',
+        $collection->add_database_table(course_personalsandbox::TABLENAME,
                 [
-                        'userid' => 'privacy:metadata:course_personal_sandbox:userid'
+                        'userid' => 'privacy:metadata:course_personalsandbox:userid'
                 ],
-                'privacy:metadata:course_personal_sandbox'
+                'privacy:metadata:course_personalsandbox'
         );
 
         return $collection;
@@ -54,7 +54,7 @@ class provider implements \core_privacy\local\metadata\provider {
         $contextlist = new \core_privacy\local\request\contextlist();
 
         $sql = "SELECT c.id FROM {context} c
-                INNER JOIN {course_personal_sandbox} cps ON cps.courseid = c.instanceid AND c.contextlevel = :contextlevel
+                INNER JOIN {".course_personalsandbox::TABLENAME."} cps ON cps.courseid = c.instanceid AND c.contextlevel = :contextlevel
                 WHERE (cps.userid = :userid)";
 
         $contextlist->add_from_sql($sql, ['contextlevel' => CONTEXT_COURSE, 'userid' => $userid]);
@@ -66,7 +66,7 @@ class provider implements \core_privacy\local\metadata\provider {
             return;
         }
 
-        $sandbox = course_personal_sandbox::get(['courseid' => $context->instanceid]);
+        $sandbox = course_personalsandbox::get(['courseid' => $context->instanceid]);
         if ($sandbox == null) {
             return;
         }
@@ -84,7 +84,7 @@ class provider implements \core_privacy\local\metadata\provider {
             if ($context != CONTEXT_COURSE) {
                 continue;
             }
-            $sandbox = course_personal_sandbox::get(['courseid' => $context->instanceid, 'userid' => $userid]);
+            $sandbox = course_personalsandbox::get(['courseid' => $context->instanceid, 'userid' => $userid]);
             if ($sandbox == null) {
                 continue;
             }
@@ -104,7 +104,7 @@ class provider implements \core_privacy\local\metadata\provider {
             if ($context != CONTEXT_COURSE) {
                 continue;
             }
-            $sandbox = course_personal_sandbox::get(['courseid' => $context->instanceid, 'userid' => $userid]);
+            $sandbox = course_personalsandbox::get(['courseid' => $context->instanceid, 'userid' => $userid]);
             if ($sandbox == null) {
                 continue;
             }

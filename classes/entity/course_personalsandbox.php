@@ -14,15 +14,15 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 /**
- * Entity model of course_personal_sandbox table.
+ * Entity model of course_personalsandbox table.
  *
- * @package local_personal_sandbox\entity
+ * @package local_personalsandbox\entity
  * @category entity
  * @copyright 2018 CVUT CZM, Jiri Fryc
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace local_personal_sandbox\entity;
+namespace local_personalsandbox\entity;
 
 defined('MOODLE_INTERNAL') || die();
 
@@ -30,14 +30,14 @@ use local_cool\entity\course;
 use local_cool\entity\database_entity;
 use local_cool\entity\user;
 
-class course_personal_sandbox extends database_entity {
-    const TABLENAME = 'local_personal_sandbox';
+class course_personalsandbox extends database_entity {
+    const TABLENAME = 'local_personalsandbox';
 
     protected $userid;
     protected $courseid;
 
-    public static function create(int $courseid, int $userid): course_personal_sandbox {
-        $entity = new course_personal_sandbox();
+    public static function create(int $courseid, int $userid): course_personalsandbox {
+        $entity = new course_personalsandbox();
         $entity->courseid = $courseid;
         $entity->userid = $userid;
         return $entity;
@@ -48,7 +48,7 @@ class course_personal_sandbox extends database_entity {
     }
 
     public function get_idnumber(): string {
-        return 'personal_sandbox:' . $this->get_owner()->get_fullname();
+        return 'personalsandbox:' . $this->get_owner()->get_fullname();
     }
 
     public function get_owner(): user {

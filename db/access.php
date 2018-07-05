@@ -17,17 +17,17 @@
 defined('MOODLE_INTERNAL') || die();
 
 $capabilities = [];
-$capabilities['local/personal_sandbox:create'] = [
+$capabilities['local/personalsandbox:create'] = [
         'riskbitmask' => RISK_SPAM,
         'captype' => 'write',
         'contextlevel' => CONTEXT_SYSTEM
 ];
-$capabilities['local/personal_sandbox:access'] = [
+$capabilities['local/personalsandbox:access'] = [
         'riskbitmask' => RISK_SPAM,
         'captype' => 'write',
         'contextlevel' => CONTEXT_SYSTEM
 ];
-$capabilities['local/personal_sandbox:update'] = [
+$capabilities['local/personalsandbox:update'] = [
         'riskbitmask' => RISK_SPAM,
         'captype' => 'write',
         'contextlevel' => CONTEXT_COURSE

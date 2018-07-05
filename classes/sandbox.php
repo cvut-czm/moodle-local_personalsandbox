@@ -16,13 +16,13 @@
 /**
  * This class provide full control over sandboxes.
  *
- * @package local_personal_sandbox
+ * @package local_personalsandbox
  * @category core
  * @copyright 2018 CVUT CZM, Jiri Fryc
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace local_personal_sandbox;
+namespace local_personalsandbox;
 
 defined('MOODLE_INTERNAL') || die();
 
@@ -33,10 +33,10 @@ use local_cool\entity\course_category;
 use local_cool\entity\role;
 use local_cool\entity\user;
 use local_cool\todo;
-use local_personal_sandbox\entity\course_personal_sandbox;
+use local_personalsandbox\entity\course_personalsandbox;
 
 class sandbox {
-    public const NAME = 'local_personal_sandbox';
+    public const NAME = 'local_personalsandbox';
 
     /**
      * Method for resolving user from username,user_id, entity class or stdClass.
@@ -69,10 +69,10 @@ class sandbox {
      * @throws \moodle_exception
      */
     public static function get_category(): int {
-        if (!course_category::exist(['idnumber' => 'personal_sandbox'])) {
+        if (!course_category::exist(['idnumber' => 'personalsandbox'])) {
             $data = [
                     'name' => 'Personal sandboxes',
-                    'idnumber' => 'personal_sandbox',
+                    'idnumber' => 'personalsandbox',
                     'description' => 'Folder used by personal sandboxes.',
                     'descriptionformat' => FORMAT_HTML,
                     'parent' => 0,
@@ -83,7 +83,7 @@ class sandbox {
             ];
             \coursecat::create($data);
         }
-        return (int) course_category::get_field(['idnumber' => 'personal_sandbox'], 'id');
+        return (int) course_category::get_field(['idnumber' => 'personalsandbox'], 'id');
     }
 
     /**
@@ -96,23 +96,23 @@ class sandbox {
      */
     public static function exist_for_user($user): bool {
         $user = self::resolve_user($user);
-        return course_personal_sandbox::exist(['userid' => $user]);
+        return course_personalsandbox::exist(['userid' => $user]);
     }
 
     /**
      * Return personal sandbox for user. Create if does not exist.
      *
      * @param user|string|int|\stdClass $user
-     * @return course_personal_sandbox
+     * @return course_personalsandbox
      * @throws \coding_exception
      * @throws \dml_exception Should not happen, it would mean problem with DB connection itself.
      * @throws \dml_transaction_exception
      * @throws \moodle_exception
      */
-    public static function get_for_user($user): course_personal_sandbox {
+    public static function get_for_user($user): course_personalsandbox {
         $user = self::resolve_user($user);
 
-        $sandbox = course_personal_sandbox::get(['userid' => $user]);
+        $sandbox = course_personalsandbox::get(['userid' => $user]);
         if ($sandbox == null) {
             $sandbox = self::create_for_user($user);
         }
@@ -121,13 +121,13 @@ class sandbox {
 
     /**
      * @param $user
-     * @return course_personal_sandbox
+     * @return course_personalsandbox
      * @throws \coding_exception
      * @throws \dml_exception
      * @throws \dml_transaction_exception
      * @throws \moodle_exception
      */
-    public static function create_for_user($user): course_personal_sandbox {
+    public static function create_for_user($user): course_personalsandbox {
         global $DB;
 
         // User input sanitation.
@@ -142,7 +142,7 @@ class sandbox {
         $data = [
                 'shortname' => $name,
                 'fullname' => $name,
-                'idnumber' => 'personal_sandbox:' . $userentity->get_username(),
+                'idnumber' => 'personalsandbox:' . $userentity->get_username(),
                 'category' => self::get_category()
         ];
         $course = \create_course((object) $data);
@@ -154,7 +154,7 @@ class sandbox {
         $enrol->enrol_user($instance, $userid, role::editingteacher()->get_id());
 
         // Marking course as personal for given user.
-        $entity = course_personal_sandbox::create($courseid, $userid);
+        $entity = course_personalsandbox::create($courseid, $userid);
         $entity->save();
 
         // Delegated transaction commit.

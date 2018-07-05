@@ -18,12 +18,12 @@ defined('MOODLE_INTERNAL') || die();
 
 use \local_cool\entity\config_plugin;
 
-function local_personal_sandbox_extend_navigation(navigation_node $node) {
-    if (config_plugin::get_or_create('local_personal_sandbox', 'show_in_sidebar', '1') == '1'
-            && has_capability('local/personal_sandbox:access', context_system::instance())) {
+function local_personalsandbox_extend_navigation(navigation_node $node) {
+    if (config_plugin::get_or_create('local_personalsandbox', 'show_in_sidebar', '1') == '1'
+            && has_capability('local/personalsandbox:access', context_system::instance())) {
         $node->add(
-                get_string('my_sandbox', 'local_personal_sandbox'),
-                new moodle_url('/local/personal_sandbox/my.php')
+                get_string('my_sandbox', 'local_personalsandbox'),
+                new moodle_url('/local/personalsandbox/my.php')
         )->showinflatnavigation = true;
     }
 }

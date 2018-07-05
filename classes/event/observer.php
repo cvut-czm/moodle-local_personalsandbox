@@ -18,23 +18,23 @@
  *
  * Used for course_delete and course_changed events
  *
- * @package local_personal_sandbox\event
+ * @package local_personalsandbox\event
  * @category event
  * @copyright 2018 CVUT CZM, Jiri Fryc
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace local_personal_sandbox\event;
+namespace local_personalsandbox\event;
 
 defined('MOODLE_INTERNAL') || die();
 
 use local_cool\entity\config_plugin;
-use local_personal_sandbox\entity\course_personal_sandbox;
-use local_personal_sandbox\sandbox;
+use local_personalsandbox\entity\course_personalsandbox;
+use local_personalsandbox\sandbox;
 
 class observer {
     public static function deleted_course(\core\event\course_deleted $event) {
-        $entity = course_personal_sandbox::get(['courseid' => $event->courseid]);
+        $entity = course_personalsandbox::get(['courseid' => $event->courseid]);
         if ($entity == null) {
             return;
         }
@@ -42,7 +42,7 @@ class observer {
     }
 
     public static function changed_course(\core\event\course_updated $event) {
-        $entity = course_personal_sandbox::get(['courseid' => $event->courseid]);
+        $entity = course_personalsandbox::get(['courseid' => $event->courseid]);
         if ($entity == null) {
             return;
         }

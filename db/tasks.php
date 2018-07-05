@@ -18,7 +18,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $tasks = [
         [
-                'classname' => 'local_personal_sandbox\task\task_clear_old_sandboxes',
+                'classname' => 'local_personalsandbox\task\task_clear_old_sandboxes',
                 'blocking' => 1,  // We are actively removing courses in this task. This could interfere with other tasks.
                 'minute' => 'R', // Random.
                 'hour' => '2',

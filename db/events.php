@@ -19,13 +19,13 @@ defined('MOODLE_INTERNAL') || die();
 $observers = [
         [
                 'eventname' => '\core\event\course_updated',
-                'callback' => 'local_personal_sandbox\event\observer::changed_course',
+                'callback' => 'local_personalsandbox\event\observer::changed_course',
                 'priority' => 0,
                 'internal' => false
         ],
         [
                 'eventname' => '\core\event\course_deleted',
-                'callback' => 'local_personal_sandbox\event\observer::deleted_course',
+                'callback' => 'local_personalsandbox\event\observer::deleted_course',
                 'priority' => 0,
                 'internal' => false
         ]

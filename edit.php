@@ -19,7 +19,7 @@ defined('MOODLE_INTERNAL') || die();
 class edit_page extends \local_cool\page\abstract_page {
 
     protected function global_permission(\local_cool\page\permissionsex $perm) {
-        $perm->require_logged()->require_capability('local/personal_sandbox:update');
+        $perm->require_logged()->require_capability('local/personalsandbox:update');
     }
 
     protected function context(): \context {

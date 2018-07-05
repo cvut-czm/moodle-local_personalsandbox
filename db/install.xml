@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<XMLDB PATH="local/personal_sandbox/db" VERSION="20120515" COMMENT="XMLDB file for Moodle local_personal_sandbox"
+<XMLDB PATH="local/personalsandbox/db" VERSION="20120515" COMMENT="XMLDB file for Moodle local_personalsandbox"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
 >
     <TABLES>
-        <TABLE NAME="local_personal_sandbox" COMMENT="Defines personal sandbox mapping">
+        <TABLE NAME="local_personalsandbox" COMMENT="Defines personal sandbox mapping">
             <FIELDS>
                 <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
                 <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>

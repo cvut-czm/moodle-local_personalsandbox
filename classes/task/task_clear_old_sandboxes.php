@@ -16,13 +16,13 @@
 /**
  * Task for clearing old sandboxes
  *
- * @package local_personal_sandbox\task
+ * @package local_personalsandbox\task
  * @category task
  * @copyright 2018 CVUT CZM, Jiri Fryc
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace local_personal_sandbox\task;
+namespace local_personalsandbox\task;
 
 defined('MOODLE_INTERNAL') || die();
 
@@ -30,8 +30,8 @@ use core\task\scheduled_task;
 use local_cool\entity\config_plugin;
 use local_cool\entity\course;
 use local_cool\entity\user;
-use local_personal_sandbox\entity\course_personal_sandbox;
-use local_personal_sandbox\sandbox;
+use local_personalsandbox\entity\course_personalsandbox;
+use local_personalsandbox\sandbox;
 
 class task_clear_old_sandboxes extends scheduled_task {
 
@@ -41,7 +41,7 @@ class task_clear_old_sandboxes extends scheduled_task {
      * @return string
      */
     public function get_name() {
-        return get_string('task:clear_old_task_name', 'local_personal_sandbox');
+        return get_string('task:clear_old_task_name', 'local_personalsandbox');
     }
 
     /**
@@ -57,7 +57,7 @@ class task_clear_old_sandboxes extends scheduled_task {
             mtrace('Skipping task. Sandbox removal disabled in config.');
             return;
         }
-        $entities = course_personal_sandbox::get_all();
+        $entities = course_personalsandbox::get_all();
         foreach ($entities as $entity) {
             /** @var course $course */
             $course = $entity->get_course();

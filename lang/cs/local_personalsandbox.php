@@ -24,7 +24,7 @@ $string['form_create_new:title'] = 'Personal sandbox';
  */
 $string['settings:show_in_sidebar'] = 'Zobrazit odkaz v sidebar';
 $string['settings:show_in_sidebar_desc'] =
-        'Pokud toto nechcete, tak můžete odkudkoliv v aplikaci přesměrovat na: <pre><code>/local/personal_sandbox/my.php</code></pre>';
+        'Pokud toto nechcete, tak můžete odkudkoliv v aplikaci přesměrovat na: <pre><code>/local/personalsandbox/my.php</code></pre>';
 $string['settings:remove_after_duration'] = 'Odstranit sandbox po';
 $string['settings:remove_after_duration_desc'] =
         'Po tomto čase bude sandbox automaticky odstraněn. <pre><code>Nastavte 0 pro nikdy.</code></pre>';
@@ -51,5 +51,5 @@ $string['notification:change_prevent_desc'] = 'Změnili jsme to zpět. Všechny 
 /*
  * Privacy API
  */
-$string['privacy:metadata:course_personal_sandbox'] = 'Personal sandbox plugin využívá použe ID uživatele k mapování.';
-$string['privacy:metadata:course_personal_sandbox:userid'] = 'ID uživatele se využívá k jeho mapování k sandboxu.';
+$string['privacy:metadata:course_personalsandbox'] = 'Personal sandbox plugin využívá použe ID uživatele k mapování.';
+$string['privacy:metadata:course_personalsandbox:userid'] = 'ID uživatele se využívá k jeho mapování k sandboxu.';

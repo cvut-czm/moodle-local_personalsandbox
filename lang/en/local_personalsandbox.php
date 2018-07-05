@@ -24,7 +24,7 @@ $string['form_create_new:title'] = 'Personal sandbox';
  */
 $string['settings:show_in_sidebar'] = 'Show link in sidebar';
 $string['settings:show_in_sidebar_desc'] =
-        'If you don´t want this, you can just point from anywhere to: <pre><code>/local/personal_sandbox/my.php</code></pre>';
+        'If you don´t want this, you can just point from anywhere to: <pre><code>/local/personalsandbox/my.php</code></pre>';
 $string['settings:remove_after_duration'] = 'Lifetime of sandboxes';
 $string['settings:remove_after_duration_desc'] =
         'After this duration the sandbox will be automatically removed.<pre><code>Set to 0 for never delete sandboxes.</code></pre>';
@@ -52,5 +52,5 @@ $string['notification:change_prevent_desc'] = 'We change it back. All other sett
 /*
  * Privacy API
  */
-$string['privacy:metadata:course_personal_sandbox'] = 'The personal sandbox plugin only need user id for his mapping to sandbox.';
-$string['privacy:metadata:course_personal_sandbox:userid'] = 'User ID is used for mapping user to his sandbox.';
+$string['privacy:metadata:course_personalsandbox'] = 'The personal sandbox plugin only need user id for his mapping to sandbox.';
+$string['privacy:metadata:course_personalsandbox:userid'] = 'User ID is used for mapping user to his sandbox.';
