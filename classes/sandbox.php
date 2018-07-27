@@ -170,4 +170,17 @@ class sandbox {
     public static function remove_for_user($user) {
         throw new todo();
     }
+
+    public static function get_config(string $name, string $default = ''): string {
+        $value = get_config('local_personalsandbox', $name);
+        if ($value === false) {
+            if ($default == '') {
+                return null;
+            } else {
+                $value = $default;
+                set_config($name, $value, 'local_personalsandbox');
+            }
+        }
+        return $value;
+    }
 }

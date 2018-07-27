@@ -35,6 +35,15 @@ $string['settings:change_name_desc'] = 'Jestli majitel sandboxu může měnit n�
 $string['settings:change_visibility'] = 'Měnitelná viditelnost kurzu';
 $string['settings:change_visibility_desc'] = 'Jestli majitel sandboxu může měnit viditelnost kurzu.';
 $string['settings:header1'] = 'Personal sandbox';
+$string['settings:fakeuser_header'] = 'Testovací účty';
+$string['settings:fakeuser/username']='Uživatelské jméno';
+$string['settings:fakeuser/username_desc']='Pokaždé bude končit náhodným číslem. Například:<pre><code>fakeuser1999</code></pre>';
+$string['settings:fakeuser/password']='Heslo';
+$string['settings:fakeuser/password_desc']='';
+$string['settings:fakeuser/firstname']='Jméno';
+$string['settings:fakeuser/firstname_desc']='';
+$string['settings:fakeuser/lastname']='Příjmení';
+$string['settings:fakeuser/lastname_desc']='';
 
 /*
  * Tasks

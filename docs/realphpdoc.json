@@ -1,0 +1,22 @@
+{
+    "name":"Integrace KOS",
+    "category":"Moodle - Lokální plugin",
+    "short_description": "Moodle plugin pro integraci ČVUT systémů jako je KOS, Usermap, Identity Provider. Zajišťuje mapování předmětů, oborů, semestrů a kateder z KOS na moodle kurzy.",
+    "license":"GPLv3",
+    "authors": ["CZM","Jiří Fryč","Aleš Gorecki"],
+    "email": "moodle@fel.cvut.cz",
+    "issues": "https://helpdesk.cvut.cz/projects/FEL_MOODLE/summary",
+    "from":"2017",
+    "tags": ["php","moodle"],
+    "namespaces": [
+        "local_kos"
+    ],
+    "files":
+    {
+        "include": ["classes"],
+        "extensions": ["php"]
+    },
+    "versions": [
+        "1.0","1.2"
+    ]
+}

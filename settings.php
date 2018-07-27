@@ -61,4 +61,23 @@ if ($hassiteconfig) {
             get_string('settings:change_visibility', 'local_personalsandbox'),
             get_string('settings:change_visibility_desc', 'local_personalsandbox'), '0'));
 
+    $settings->add(new admin_setting_heading('local_personalsandbox/fakeuser_header',
+            get_string('settings:fakeuser_header', 'local_personalsandbox'), ''));
+
+    $settings->add(new admin_setting_configtext('local_personalsandbox/fakeuser_username',
+            get_string('settings:fakeuser/username', 'local_personalsandbox'),
+            get_string('settings:fakeuser/username_desc', 'local_personalsandbox'),
+            'fakeuser', PARAM_ALPHANUM, 255));
+    $settings->add(new admin_setting_configtext('local_personalsandbox/fakeuser_password',
+            get_string('settings:fakeuser/password', 'local_personalsandbox'),
+            get_string('settings:fakeuser/password_desc', 'local_personalsandbox'),
+            'qwertywhatelse', PARAM_ALPHANUM, 255));
+    $settings->add(new admin_setting_configtext('local_personalsandbox/fakeuser_firstname',
+            get_string('settings:fakeuser/firstname', 'local_personalsandbox'),
+            get_string('settings:fakeuser/firstname_desc', 'local_personalsandbox'),
+            'Fake', PARAM_ALPHANUM, 255));
+    $settings->add(new admin_setting_configtext('local_personalsandbox/fakeuser_lastname',
+            get_string('settings:fakeuser/lastname', 'local_personalsandbox'),
+            get_string('settings:fakeuser/lastname_desc', 'local_personalsandbox'),
+            'User', PARAM_ALPHANUM, 255));
 }

@@ -36,6 +36,16 @@ $string['settings:change_visibility'] = 'Changeable sandbox visibility';
 $string['settings:change_visibility_desc'] = 'If sandbox owner can change sandbox course visibility.';
 $string['settings:header1'] = 'Personal sandbox';
 $string['settings:header2'] = 'Seminar sandbox';
+$string['settings:fakeuser_header'] = 'Fake users';
+$string['settings:fakeuser/username']='Username';
+$string['settings:fakeuser/username_desc']='It will always end with random number. Example:<pre><code>fakeuser1999</code></pre>';
+$string['settings:fakeuser/password']='Password';
+$string['settings:fakeuser/password_desc']='';
+$string['settings:fakeuser/firstname']='Firstname';
+$string['settings:fakeuser/firstname_desc']='';
+$string['settings:fakeuser/lastname']='Lastname';
+$string['settings:fakeuser/lastname_desc']='';
+
 
 /*
  * Tasks
